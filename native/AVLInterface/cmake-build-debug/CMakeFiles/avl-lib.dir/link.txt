@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -g -dynamiclib -Wl,-headerpad_max_install_names  -o /Users/alberthumbert/Desktop/AVLVisualization/jni-lib/libavl-lib.dylib -install_name @rpath/libavl-lib.dylib CMakeFiles/avl-lib.dir/avl.c.o CMakeFiles/avl-lib.dir/DataHelper.cpp.o 

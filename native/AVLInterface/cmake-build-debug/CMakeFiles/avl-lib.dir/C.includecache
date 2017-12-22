@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/avl.c
+stddef.h
+-
+math.h
+-
+stdlib.h
+-
+printf.h
+-
+stdbool.h
+-
+avl.h
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/avl.h
+
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/avl.h
+avl_def.h
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/avl_def.h
+
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/avl_def.h
+

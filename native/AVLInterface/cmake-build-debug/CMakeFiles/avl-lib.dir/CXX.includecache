@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/DataHelper.cpp
+DataHelper.h
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/DataHelper.h
+
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/DataHelper.h
+jni.h
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/jni.h
+avl.h
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/avl.h
+
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/avl.h
+avl_def.h
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/avl_def.h
+
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/avl_def.h
+
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/jni.h
+stdio.h
+-
+stdarg.h
+-
+jni_md.h
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/jni_md.h
+
+/Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/jni_md.h
+
