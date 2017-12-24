@@ -32,6 +32,8 @@ public class DataHelper {
 
     public native void remove(long key);
 
+    public native void fireAll();
+
     public native void resetPosition(long key, int x, int y);
 
     public native AVLNode findAVLNode(long key);

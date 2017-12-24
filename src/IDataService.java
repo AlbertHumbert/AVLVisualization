@@ -4,7 +4,7 @@
  */
 public interface IDataService {
 
-    void onSearch(long key);
+    AVLNode onSearch(long key);
 
     void onInsert(long key);
 

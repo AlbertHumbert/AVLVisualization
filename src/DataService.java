@@ -12,8 +12,8 @@ public class DataService implements IDataService {
     }
 
     @Override
-    public void onSearch(long key) {
-        mDataHelper.findAVLNode(key);
+    public AVLNode onSearch(long key) {
+        return mDataHelper.findAVLNode(key);
     }
 
     @Override
@@ -31,7 +31,8 @@ public class DataService implements IDataService {
 
     @Override
     public void onFire() {
-        //TODO
+        mDataHelper.fireAll();
+        mRoot = mDataHelper.getRoot();
     }
 
     @Override

@@ -24,6 +24,7 @@ public class AVLTreePanel extends JPanel implements ActionListener {
     private JButton mFireAllButton;
     private JTextField mKeyTextField;
     private IDataService mCallback;
+    private AVLNode mFindingResult;
 
     public AVLTreePanel() {
         mInsertButton = new JButton(CMD_INSERT);
@@ -52,6 +53,8 @@ public class AVLTreePanel extends JPanel implements ActionListener {
     public void paint(Graphics g) {
         super.paint(g);
         if ((mRoot = mCallback.getRoot()) == null) return;
+
+        System.out.println("print");
         g.setColor(Color.orange);
         paintTree(g, mRoot, mStartX, mStartY, (int) (4 * Math.pow(2, getAVLTreeHeightRecursively(mRoot))));
 
@@ -75,7 +78,11 @@ public class AVLTreePanel extends JPanel implements ActionListener {
             if (node.rchild != null) g.drawLine(x + 10, y + 10, x + 10 + divideX, y + 10 + mDivideY);
             paintTree(g, node.rchild, x + divideX, y + mDivideY, divideX / 2);
 
+
+            if(mFindingResult!=null && node.key == mFindingResult.key)g.setColor(Color.red);
+            else g.setColor(Color.orange);
             g.fillOval(x, y, 20, 20);
+
             g.setColor(Color.BLUE);
             g.drawString(node.key + "", x + 2, y + 16);
             g.setColor(Color.orange);
@@ -104,7 +111,7 @@ public class AVLTreePanel extends JPanel implements ActionListener {
                 mCallback.onDelete(Long.parseLong(mKeyTextField.getText()));
                 break;
             case CMD_SEARCH:
-                mCallback.onSearch(Long.parseLong(mKeyTextField.getText()));
+                mFindingResult = mCallback.onSearch(Long.parseLong(mKeyTextField.getText()));
                 break;
             case CMD_FIRE:
                 mCallback.onFire();

@@ -18,7 +18,7 @@
 #define EH 0
 #define RH -1
 
-#define KeyType int
+#define KeyType long
 #define ElemType char
 
 //节点结构体

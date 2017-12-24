@@ -39,7 +39,8 @@ JNIEXPORT void JNICALL Java_DataHelper_insert
 JNIEXPORT void JNICALL Java_DataHelper_remove
         (JNIEnv *env, jobject jobj, jlong jkey) {
 
-    printf("%d", findAVLData(sAvlTree, jkey)->key);
+    if (!sAvlTree || sAvlTree->root == nullptr)return;
+    printf("%li", findAVLData(sAvlTree, jkey)->key);
     if (sAvlTree)removeAVLData(sAvlTree, jkey);
 
 
@@ -48,14 +49,17 @@ JNIEXPORT void JNICALL Java_DataHelper_remove
 JNIEXPORT void JNICALL Java_DataHelper_resetPosition
         (JNIEnv *env, jobject jobj, jlong jkey, jint jx, jint jy) {
 
+    if (!sAvlTree || sAvlTree->root == nullptr)return;
     AVLNode *avlNode = findAVLData(sAvlTree, jkey);
 };
 
 JNIEXPORT jobject JNICALL Java_DataHelper_findAVLNode
         (JNIEnv *env, jobject jobj, jlong jkey) {
+    if (!sAvlTree || !sAvlTree->root)return nullptr;
     printAVLTree(sAvlTree);
 
     AVLNode *avlNode = findAVLData(sAvlTree, jkey);
+    if (!avlNode)return nullptr;
     jobject jAVLNode = convertAvlNode2jobject(env, avlNode);
     createJAVLTree(env, avlNode, jAVLNode);
 
@@ -64,7 +68,7 @@ JNIEXPORT jobject JNICALL Java_DataHelper_findAVLNode
 
 JNIEXPORT jobject JNICALL Java_DataHelper_getRoot
         (JNIEnv *env, jobject jobj) {
-    if (!sAvlTree)return nullptr;
+    if (!sAvlTree || !sAvlTree->root)return nullptr;
     AVLNode *avlNode = findAVLData(sAvlTree, sAvlTree->root->key);
     jobject jroot = convertAvlNode2jobject(env, avlNode);
     createJAVLTree(env, avlNode, jroot);
@@ -130,7 +134,13 @@ void createJAVLTree(JNIEnv *env, AVLNode *avlNode, jobject jAvlNode) {
         createJAVLTree(env, avlNode->rchild, jRchild);
     }
 
+}
 
-    printf("create node\n");
 
+JNIEXPORT void JNICALL Java_DataHelper_fireAll
+        (JNIEnv *env, jobject jobj) {
+
+    if (!sAvlTree || !sAvlTree->root)return;
+    releaseAVLTree(sAvlTree);
+    sAvlTree = nullptr;
 }

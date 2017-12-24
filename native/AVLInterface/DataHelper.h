@@ -56,6 +56,18 @@ JNIEXPORT jobject JNICALL Java_DataHelper_findAVLNode
 JNIEXPORT jobject JNICALL Java_DataHelper_getRoot
         (JNIEnv *, jobject);
 
+
+JNIEXPORT void JNICALL Java_DataHelper_insert
+        (JNIEnv *, jobject, jlong, jint, jint);
+
+/*
+ * Class:     DataHelper
+ * Method:    fireAll
+ * Signature: (I)V
+ */
+JNIEXPORT void JNICALL Java_DataHelper_fireAll
+        (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif
