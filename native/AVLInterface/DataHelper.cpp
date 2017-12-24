@@ -105,21 +105,19 @@ jobject setLchild(JNIEnv *env, jobject jAVLNode, AVLNode *lchild) {
     jobject child = env->GetObjectField(jAVLNode, lchildID);
     jfieldID keyID = env->GetFieldID(nodeClazz, "x", "I");
     int i = env->GetIntField(child, keyID);
-    printf("%d", i);
 
     return jLchild;
 }
 
-jobject setRchild(JNIEnv *env, jobject jAVLNode, AVLNode *lchild) {
+jobject setRchild(JNIEnv *env, jobject jAVLNode, AVLNode *rchild) {
 
-    jobject jRchild = convertAvlNode2jobject(env, lchild);
+    jobject jRchild = convertAvlNode2jobject(env, rchild);
     jclass nodeClazz = env->FindClass("AVLNode");
     jfieldID rchildID = env->GetFieldID(nodeClazz, "rchild", "LAVLNode;"); //check
     env->SetObjectField(jAVLNode, rchildID, jRchild);
     return jRchild;
 
 }
-
 
 //构造Java层的树形结构
 void createJAVLTree(JNIEnv *env, AVLNode *avlNode, jobject jAvlNode) {
@@ -135,7 +133,6 @@ void createJAVLTree(JNIEnv *env, AVLNode *avlNode, jobject jAvlNode) {
     }
 
 }
-
 
 JNIEXPORT void JNICALL Java_DataHelper_fireAll
         (JNIEnv *env, jobject jobj) {
