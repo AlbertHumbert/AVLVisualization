@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 /Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/DataHelper.cpp
+cstdlib
+-
 DataHelper.h
 /Users/alberthumbert/Desktop/AVLVisualization/native/AVLInterface/DataHelper.h
 

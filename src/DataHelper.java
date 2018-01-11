@@ -28,17 +28,21 @@ public class DataHelper {
 
     private static native void init();
 
-    public native void insert(long key, int x, int y);
+    public native void insert(long key, int x, int y,int treeIndex);
 
-    public native void remove(long key);
+    public native void remove(long key,int treeIndex);
 
-    public native void fireAll();
+    public native void fireAll(int treeIndex);
 
-    public native void resetPosition(long key, int x, int y);
+    public native void resetPosition(long key, int x, int y,int treeIndex);
 
-    public native AVLNode findAVLNode(long key);
+    public native AVLNode findAVLNode(long key,int treeIndex);
 
-    public native AVLNode getRoot();
+    public native AVLNode getRoot(int treeIndex);
+
+    public native void merge();
+
+    public native void split(long key,int treeIndex);
 
     public void findFinish() {
         System.out.println("finish");

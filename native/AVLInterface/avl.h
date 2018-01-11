@@ -1,5 +1,5 @@
 //
-// Created by Albert Humbert on 17/12/10.
+// Created by 林嘉民 on 17/12/10.
 //
 
 /**
@@ -98,7 +98,7 @@ void mergeAVLTree(AVLTree *tree[2], AVLTree **result);
  * @param avlTree
  * @param avlTrees
  */
-void splitAVLTree(AVLTree *avlTree, int key, AVLTree *avlTrees[2]);
+void splitAVLTree(AVLTree *avlTree, KeyType key, AVLTree *avlTrees[2]);
 
 
 void printAVLNode(AVLNode *node);

@@ -1,5 +1,5 @@
 //
-// Created by Albert Humbert on 17/12/10.
+// Created by 林嘉民 on 17/12/10.
 //
 /**
  * AVL树接口具体实现
@@ -13,8 +13,7 @@
 #include "avl.h"
 
 
-
-AVLNode *newAVLNode(int key, void *data);
+AVLNode *newAVLNode(KeyType key, void *data);
 
 int insertAndAdjust(AVLNode **nodeP, KeyType key, void *data, int *taller);
 
@@ -102,7 +101,7 @@ void printNodeRecursively(AVLNode *node, int depth) {
         for (int i = 0; i < depth; i++) {
             printf("   ");
         }
-        printf(" * (key : %d  bf : %d dp : %d)\n", node->key, node->bf, depth);
+        printf(" * (key : %ld  bf : %d dp : %d)\n", node->key, node->bf, depth);
         printNodeRecursively(node->lchild, depth + 1);
     }
 }
@@ -574,7 +573,7 @@ void simpleRotateL(AVLNode **nodeP) {
 /*
  * 创建新节点
  */
-AVLNode *newAVLNode(int key, void *data) {
+AVLNode *newAVLNode(KeyType key, void *data) {
     AVLNode *node = (AVLNode *) malloc(sizeof(AVLNode));
     node->key = key;
     node->data = data;
@@ -643,7 +642,7 @@ AVLNode *sortedArrayToAVL(AVLNode **array, long start, long end) {
 
 //打印节点
 void printAVLNode(AVLNode *node) {
-    printf(" * (key : %d  bf : %d )\n", node->key, node->bf);
+    printf(" * (key : %ld  bf : %d )\n", node->key, node->bf);
 }
 
 
@@ -687,6 +686,7 @@ void mergeAVLTree(AVLTree *tree[2], AVLTree **result) {
     for (i = 0; i < last; i++) {
         printAVLNode(array[i]);
     }
+
     //使用二分法的原理重新构造平衡二叉树，这样出来的树一定是平衡且符合查找树定义的
     (*result)->root = sortedArrayToAVL(array, 0, last - 1);
     //重新调整平衡因子
@@ -697,11 +697,16 @@ void mergeAVLTree(AVLTree *tree[2], AVLTree **result) {
 //递归遍历树并添加到数组中，并查找指定的节点
 void addAndFindAVLNodeRecursively(AVLNode **array, AVLNode *avlNode, long *index, long keyToFind, long *resultIndex) {
     if (avlNode) {
-        if (avlNode->lchild)addAndFindAVLNodeRecursively(array, avlNode->lchild, index, keyToFind, resultIndex);
+
+        if (avlNode->lchild)
+            addAndFindAVLNodeRecursively(array, avlNode->lchild, index, keyToFind, resultIndex);
         addTOArray(array, avlNode, *index);
-        if (avlNode->key == keyToFind)*resultIndex = *index;
+        if (avlNode->key == keyToFind)
+            *resultIndex = *index;
         (*index)++;
-        if (avlNode->rchild)addAndFindAVLNodeRecursively(array, avlNode->rchild, index, keyToFind, resultIndex);
+        if (avlNode->rchild)
+            addAndFindAVLNodeRecursively(array, avlNode->rchild, index, keyToFind, resultIndex);
+
     }
 }
 
@@ -709,29 +714,29 @@ void addAndFindAVLNodeRecursively(AVLNode **array, AVLNode *avlNode, long *index
  * 把一棵平衡二叉树分裂为两棵平衡二叉树，
  * 使得在一棵树中的所有关键字都小于或等于x，另一棵树中的任一关键字都大于x
  */
-void splitAVLTree(AVLTree *avlTree, int key, AVLTree *avlTrees[2]) {
+void splitAVLTree(AVLTree *avlTree, KeyType key, AVLTree **avlTrees) {
 
     long index = 0;
     long keyIndex = -1;
-
     AVLNode **array = malloc((avlTree->size * sizeof(AVLNode *)));
     //中序遍历平衡二叉树，保存节点到指针数组，这样出来的数组一定是按key有序的
     //并且在遍历过程中可同时记录查找节点并记录在数组中的索引，用于后面分割数组
     addAndFindAVLNodeRecursively(array, avlTree->root, &index, key, &keyIndex);
+
     if (keyIndex == -1) {
         printf("not found");
         return;
     }
-
     avlTrees[0] = malloc(sizeof(AVLTree *));
     avlTrees[1] = malloc(sizeof(AVLTree *));
     //使用二分法的原理重新构造平衡二叉树，这样出来的树一定是平衡且符合查找树定义的
     avlTrees[0]->root = sortedArrayToAVL(array, 0, keyIndex - 1);
     avlTrees[1]->root = sortedArrayToAVL(array, keyIndex + 1, avlTree->size - 1);
+    avlTrees[0]->size = keyIndex;
+    avlTrees[1]->size = avlTree->size - 1 - keyIndex;
     //重新调整平衡因子
     resetBF(avlTrees[0]->root);
     resetBF(avlTrees[1]->root);
-
 }
 
 

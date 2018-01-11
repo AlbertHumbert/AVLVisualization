@@ -1,3 +1,7 @@
+/**
+ * 该文件为 jdk for OS X 中的JNI头文件，编译native层方法实现的动态链接库时需要导入该头文件
+ */
+
 /*
  * Copyright (c) 1996, 2000, Oracle and/or its affiliates. All rights reserved.
  * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.

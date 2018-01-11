@@ -4,13 +4,17 @@
  */
 public interface IDataService {
 
-    AVLNode onSearch(long key);
+    AVLNode onSearch(long key,int treeIndex);
 
-    void onInsert(long key);
+    void onInsert(long key,int treeIndex);
 
-    void onDelete(long key);
+    void onDelete(long key,int treeIndex);
 
-    void onFire();
+    void onFire(int treeIndex);
 
-    AVLNode getRoot();
+    void onMerge();
+
+    void onSplit(long key,int treeIndex);
+
+    AVLNode getRoot(int treeIndex);
 }
