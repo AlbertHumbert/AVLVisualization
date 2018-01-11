@@ -689,6 +689,7 @@ void mergeAVLTree(AVLTree *tree[2], AVLTree **result) {
 
     //使用二分法的原理重新构造平衡二叉树，这样出来的树一定是平衡且符合查找树定义的
     (*result)->root = sortedArrayToAVL(array, 0, last - 1);
+    (*result)->size = last;
     //重新调整平衡因子
     resetBF((*result)->root);
 

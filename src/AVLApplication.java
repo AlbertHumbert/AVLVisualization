@@ -16,7 +16,7 @@ public class AVLApplication {
         treePanel.setOptionCallback(new DataService());
 
         JFrame jFrame = new JFrame();
-        jFrame.setBounds(0, 0, 800, 600);
+        jFrame.setBounds(0, 0, 800, 640);
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         jFrame.add(treePanel);
         jFrame.setVisible(true);

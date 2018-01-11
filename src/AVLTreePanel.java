@@ -82,7 +82,7 @@ public class AVLTreePanel extends JPanel implements ActionListener {
         if ((root = mCallback.getRoot(1)) != null) {
 
             g.setColor(Color.orange);
-            paintTree(g, root, mStartX, 300, (int) (4 * Math.pow(2, getAVLTreeHeightRecursively(root))));
+            paintTree(g, root, mStartX, 320, (int) (4 * Math.pow(2, getAVLTreeHeightRecursively(root))));
         }
 
     }
