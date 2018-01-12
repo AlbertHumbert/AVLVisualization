@@ -7,8 +7,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/native/AVLInterface/.idea/workspace.xml" afterPath="$PROJECT_DIR$/native/AVLInterface/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/native/AVLInterface/avl.c" afterPath="$PROJECT_DIR$/native/AVLInterface/avl.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AVLApplication.java" afterPath="$PROJECT_DIR$/src/AVLApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AVLTreePanel.java" afterPath="$PROJECT_DIR$/src/AVLTreePanel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AVLTreePanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AVLTreePanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AVLTreePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="84" column="42" lean-forward="false" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="42" />
+            <state relative-caret-position="-851">
+              <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,19 +70,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DataService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DataService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="e#230#231#0" expanded="true" />
-                <element signature="e#284#285#0" expanded="true" />
-                <element signature="e#353#354#0" expanded="true" />
-                <element signature="e#414#415#0" expanded="true" />
-                <element signature="e#1352#1353#0" expanded="true" />
-                <element signature="e#1391#1392#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-436">
+              <caret line="20" column="48" lean-forward="true" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/native/AVLInterface/avl.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="14841">
-              <caret line="744" column="0" lean-forward="false" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
+              <caret line="746" column="0" lean-forward="false" selection-start-line="746" selection-start-column="0" selection-end-line="746" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -180,8 +171,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="30" />
-    <option name="y" value="23" />
+    <option name="x" value="117" />
+    <option name="y" value="311" />
     <option name="width" value="1280" />
     <option name="height" value="764" />
   </component>
@@ -381,8 +372,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="30" y="23" width="1280" height="764" extended-state="0" />
-    <editor active="true" />
+    <frame x="117" y="311" width="1280" height="764" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -426,14 +416,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding>
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#284#285#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-            <element signature="e#1391#1392#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -720,25 +703,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#284#285#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-            <element signature="e#1391#1392#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/native/AVLInterface/avl.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14841">
-          <caret line="744" column="0" lean-forward="false" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
+          <caret line="746" column="0" lean-forward="false" selection-start-line="746" selection-start-column="0" selection-end-line="746" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -761,11 +729,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AVLTreePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="84" column="42" lean-forward="false" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="42" />
+        <state relative-caret-position="-851">
+          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-436">
+          <caret line="20" column="48" lean-forward="true" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>

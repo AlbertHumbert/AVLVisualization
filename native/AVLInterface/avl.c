@@ -652,23 +652,29 @@ void printAVLNode(AVLNode *node) {
 void mergeAVLTree(AVLTree *tree[2], AVLTree **result) {
 
     long index = 0;
-    long mid = tree[0]->size;
+    long mid = tree[0]->size-1;
     long i = 0;
     long j = mid + 1;
     long k = 0;
-    long last = tree[0]->size + tree[1]->size;
+    long resize = (tree[0]->size + tree[1]->size);
+    long last = resize-1;
 
-    AVLNode **array = malloc((tree[0]->size + tree[1]->size) * sizeof(AVLNode *));
-    AVLNode **temp = malloc((tree[0]->size + tree[1]->size) * sizeof(AVLNode *));
+
+    AVLNode **array =(AVLNode **) malloc(resize * sizeof(AVLNode *));
+    AVLNode **temp = (AVLNode **)malloc(resize * sizeof(AVLNode *));
     //中序遍历平衡二叉树，保存节点到指针数组，这样出来的数组一定是按key有序的
     addAVLTreeRecursively(array, tree[0]->root, &index);
     addAVLTreeRecursively(array, tree[1]->root, &index);
 
+
     while (i <= mid && j <= last) {
         if (array[i]->key == array[j]->key) {
-            continue;
+            temp[k++] = array[i];
+            i++;
+            j++;
+            resize--;
         }
-        if (array[i]->key < array[j]->key)
+        else if (array[i]->key < array[j]->key)
             temp[k++] = array[i++];
         else
             temp[k++] = array[j++];
@@ -680,16 +686,12 @@ void mergeAVLTree(AVLTree *tree[2], AVLTree **result) {
     while (j <= last)
         temp[k++] = array[j++];
 
-    for (i = 0; i < k; i++)
-        array[i] = temp[i];
-
-    for (i = 0; i < last; i++) {
-        printAVLNode(array[i]);
+    for (i = 0; i < resize; i++) {
+        printAVLNode(temp[i]);
     }
-
     //使用二分法的原理重新构造平衡二叉树，这样出来的树一定是平衡且符合查找树定义的
-    (*result)->root = sortedArrayToAVL(array, 0, last - 1);
-    (*result)->size = last;
+    (*result)->root = sortedArrayToAVL(temp, 0, resize-1);
+    (*result)->size = resize;
     //重新调整平衡因子
     resetBF((*result)->root);
 
